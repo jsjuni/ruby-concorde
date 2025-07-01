@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'open3'
 require 'tsplib'
 require 'tmpdir'
 
@@ -7,9 +8,13 @@ class Concorde
 
   def initialize(tsp)
     @tsp = tsp
+    @tour = nil
+    @cost = nil
   end
 
-  def run
+  attr_reader :tour, :cost
+
+  def optimize
 
     # Create temporary directory.
 
@@ -26,15 +31,14 @@ class Concorde
         f.puts(@tsp.to_s)
       end
 
-      docker_cmd = "docker run --rm -t -v #{tspdir}:/usr/local/opt/concorde/ alehkot/concorde-tsp:1.0 problem.tsp" +
-                   " > /dev/null 2>&1"
-      system(docker_cmd)
+      docker_cmd = "docker run --rm -t -v #{tspdir}:/usr/local/opt/concorde/ alehkot/concorde-tsp:1.0 problem.tsp 2> /dev/null"
+      o, e, s = Open3.capture3(docker_cmd)
 
-      sol = File.open("#{tspdir}/problem.sol") do |f|
+      @cost = o.match(/Optimal Solution:\s+([[:digit:]]+)(\.[[:digit:]]+)?/)[1].to_i
+
+      @tour = File.open("#{tspdir}/problem.sol") do |f|
         f.read.split.drop(1).map { |s| s.to_i }
       end
-
-      sol
 
     end
   end

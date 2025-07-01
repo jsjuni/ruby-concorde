@@ -1,7 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
   <component name="ModuleRunConfigurationManager">
-    <shared />
+    <shared>
+      <configuration default="false" name="All tests in tests: ruby-concorde" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+        <module name="ruby-concorde" />
+        <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+        <envs>
+          <env name="JRUBY_OPTS" value="-X+O" />
+        </envs>
+        <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+        <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+          <COVERAGE_PATTERN ENABLED="true">
+            <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+          </COVERAGE_PATTERN>
+        </EXTENSION>
+        <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$MODULE_DIR$/tests" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/{*_test,test_*,*_spec}.rb" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+        <method v="2" />
+      </configuration>
+      <configuration default="false" name="test_concorde.rb" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" nameIsGenerated="true">
+        <module name="ruby-concorde" />
+        <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+        <envs>
+          <env name="JRUBY_OPTS" value="-X+O" />
+        </envs>
+        <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+        <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+          <COVERAGE_PATTERN ENABLED="true">
+            <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+          </COVERAGE_PATTERN>
+        </EXTENSION>
+        <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/tests/test_concorde.rb" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/tests/test_concorde.rb" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="CUSTOM_SET_OF_FILES" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+        <method v="2" />
+      </configuration>
+      <configuration default="false" name="test_tsplib.rb" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" nameIsGenerated="true">
+        <module name="ruby-concorde" />
+        <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Ilib" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+        <envs>
+          <env name="JRUBY_OPTS" value="-X+O" />
+        </envs>
+        <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+        <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+          <COVERAGE_PATTERN ENABLED="true">
+            <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+          </COVERAGE_PATTERN>
+        </EXTENSION>
+        <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/tests/test_tsplib.rb" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="CUSTOM_SET_OF_FILES" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+        <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+        <method v="2" />
+      </configuration>
+    </shared>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -12,7 +103,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.6.2, rbenv: 3.4.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="power_assert (v2.0.5, rbenv: 3.4.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="test-unit (v3.6.9, rbenv: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="logger (v1.7.0, rbenv: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.5, rbenv: 3.4.2) [gem]" level="application" />
   </component>
 </module>

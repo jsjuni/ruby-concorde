@@ -27,6 +27,10 @@ WEIGHTS = [
 
 class TestConcorde < Minitest::Test
 
+  VALID = [
+    [0, 3, 12, 6, 7, 5, 16, 13, 14, 2, 10, 9, 1, 4, 8, 11, 15],
+    [0, 15, 11, 8, 4, 1, 9, 10, 2, 14, 13, 16, 5, 7, 6, 12, 3]
+  ]
   def test_concorde
 
     tsp = TSPLIB::TSP.new('gr17', '17-city problem (Groetschel)', 17)
@@ -37,8 +41,11 @@ class TestConcorde < Minitest::Test
     end
 
     concorde = Concorde.new(tsp)
-    sol = concorde.run
-    assert_equal(sol, [0, 15, 11, 8, 4, 1, 9, 10, 2, 14, 13, 16, 5, 7, 6, 12, 3])
+    concorde.optimize
+    tour = concorde.tour
+    cost = concorde.cost
+    assert_includes(VALID, tour)
+    assert_equal(cost, 2085)
 
   end
 
