@@ -2,6 +2,8 @@
 
 module TSPLIB
 
+  EOF = 'EOF'
+
   class Problem
 
     attr_reader :name, :comment, :dimension, :weight

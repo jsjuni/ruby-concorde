@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'tsplib'
+require 'tmpdir'
 
 class Concorde
 
