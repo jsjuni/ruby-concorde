@@ -41,12 +41,15 @@ class TestConcorde < Minitest::Test
     end
 
     concorde = Concorde.new(tsp)
-    concorde.optimize
+    output = String.new()
+    concorde.optimize do |line|
+      output << line
+    end
     tour = concorde.tour
     cost = concorde.cost
     assert_includes(VALID, tour)
     assert_equal(cost, 2085)
-
+    assert_match(/.*Final LP has 23 rows, 37 columns, 101 nonzeros.*/, output)
   end
 
 end

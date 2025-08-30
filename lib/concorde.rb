@@ -14,7 +14,7 @@ class Concorde
 
   attr_reader :tour, :cost
 
-  def optimize
+  def optimize(&block)
 
     # Create temporary directory.
 
@@ -29,11 +29,20 @@ class Concorde
         end
 
         concorde_cmd = "concorde -o problem.sol problem.tsp 2> /dev/null"
-        o, e, s = Open3.capture3(concorde_cmd)
+        Open3.popen2e(concorde_cmd) do |stdin, stdout_err, wait_thr|
 
-        @cost = o.match(/Optimal Solution:\s+([[:digit:]]+)(\.[[:digit:]]+)?/)[1].to_i
+          stdout_err.each do |line|
+            if (m = line.match(/Optimal Solution:\s+([[:digit:]]+)(\.[[:digit:]]+)?/))
+              @cost = m[1].to_i
+            end
+            yield line if block_given?
+          end
 
-        @tour = File.open("problem.sol") do |f|
+          wait_thr.value
+
+        end
+
+       @tour = File.open("problem.sol") do |f|
           f.read.split.drop(1).map { |s| s.to_i }
         end
 
