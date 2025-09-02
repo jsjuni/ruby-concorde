@@ -49,7 +49,7 @@ class TestConcorde < Minitest::Test
     cost = concorde.cost
     assert_includes(VALID, tour)
     assert_equal(cost, 2085)
-    assert_match(/.*Final LP has 23 rows, 37 columns, 101 nonzeros.*/, output)
+    assert_match(/Optimal Solution: 2085\.00/, output)
   end
 
 end
