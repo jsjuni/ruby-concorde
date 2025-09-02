@@ -51,6 +51,11 @@ class Concorde
                 yield "error #{error}" if block_given?
                 if error < tolerance
                   Process.kill('TERM', wait_thr.pid)
+                  begin
+                    Process.waitpid(wait_thr.pid)
+                  rescue Errno::ECHILD, Errno::ESRCH
+                    # Ignored
+                  end
                   break
                 end
               end
@@ -58,8 +63,7 @@ class Concorde
             end
           end
 
-          wait_thr.value
-
+          wait_thr.join
         end
 
         @tour = File.open("problem.sol") do |f|
@@ -68,6 +72,7 @@ class Concorde
 
       end
     end
+
   end
 
 end
