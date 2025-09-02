@@ -31,7 +31,7 @@ class TestConcorde < Minitest::Test
     [0, 3, 12, 6, 7, 5, 16, 13, 14, 2, 10, 9, 1, 4, 8, 11, 15],
     [0, 15, 11, 8, 4, 1, 9, 10, 2, 14, 13, 16, 5, 7, 6, 12, 3]
   ]
-  def test_concorde
+  def test_concorde_gr17
 
     tsp = TSPLIB::TSP.new('gr17', '17-city problem (Groetschel)', 17)
     0.upto(16) do |i|
@@ -52,4 +52,17 @@ class TestConcorde < Minitest::Test
     assert_match(/Optimal Solution: 2085\.00/, output)
   end
 
+  def test_concorde_gr431
+
+    tsp = File.read("tsplib/gr431.tsp")
+
+    concorde = Concorde.new(tsp, "-s 1756830314")
+    output = String.new()
+    concorde.optimize(tolerancee = 0.01) do |line|
+      output << line
+    end
+    assert_equal(171416.00, concorde.cost)
+    assert_equal(171328.557692, concorde.lower_bound)
+    assert_equal(431, concorde.tour.size)
+  end
 end
