@@ -33,9 +33,9 @@ class Concorde
           end
 
           concorde_cmd = "concorde -o problem.sol #{@options} problem.tsp 2> /dev/null"
-          Open3.popen2e(concorde_cmd) do |stdin, stdout_err, wait_thr|
+          Open3.popen2(concorde_cmd) do |stdin, stdout, wait_thr|
 
-            stdout_err.each do |line|
+            stdout.each do |line|
 
               yield line if block_given?
 
